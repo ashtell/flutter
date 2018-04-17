@@ -3,7 +3,7 @@ Rails.application.routes.draw do
   
   get '/index' => 'pages#home'
 
-  get '/home' => 'pages#profile'
+  get '/home' => 'pages#home'
 
   get '/profile' => 'pages#profile'
 
