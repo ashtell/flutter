@@ -8,6 +8,11 @@ class PagesController < ApplicationController
   end
   #backend code for pages/profile
   def profile
+    if(User.find_by_username(params[:id]))
+      @username = params[:id]
+    else
+      redirect_to root_path, :notice=> "User not found!"
+    end
   end
   #backend code for pages/explore
   def explore
