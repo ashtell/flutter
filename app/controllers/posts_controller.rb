@@ -6,10 +6,10 @@ class PostsController < ApplicationController
         @post = Post.new(post_params)
         @post.user_id = current_user.id
         respond_to do |f|
-            if(@post.save)
-                f.html {redirect_to "", notice: "Post created!" }
+            if(!@post.save)
+                f.html {redirect_to "/home", notice: "Post created!" }
             else
-                f.html {redirect_to "", notice: "Error: Post not saved." }
+                f.html {redirect_to "/home", notice: "Error: Post not saved." }
             end
         end
     end
